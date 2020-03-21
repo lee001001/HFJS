@@ -1,0 +1,41 @@
+<!docytype html;>
+<html lang="en">
+<head>
+	<title>Bubbles-R-Us-for</title>
+	<meta charset="utf-8">
+	<script> // find the highest Buble Score and bubble count
+		var scores = [60,50,60,58,54,54,
+					  58,50,52,54,48,69,
+					  34,55,51,52,44,51,
+					  69,64,66,55,52,61,
+					  46,31,57,52,44,18,
+					  41,53,55,61,51,44]; // 題目中的陣列
+		var highScore = 0;
+		var output;
+		
+	
+		for(var i =0; i < scores.length; i++){
+			output = "Bubble solution #" + i + " score: " + scores[i];
+			console.log(output);
+			if(scores[i] > highScore){
+				highScore = scores[i];
+			}
+		}
+		console.log("Bubble tests: " + scores.length );
+		console.log("highest Bubble score: " + highScore );
+
+		var bestSolutions = []; // 用來放置分數最高的陣列
+
+		for(var i =0; i <scores.length; i++){
+			if(scores[i] == highScore) // 如果scores陣列中元素和最高分相同就放進bestSolutions陣列中
+				bestSolutions.push(i); //放進scores最高分數的編號
+		}
+		console.log("solutions with the highest score: " + bestSolutions);
+
+
+
+	</script>
+</head>
+<body></body>
+</html>
+

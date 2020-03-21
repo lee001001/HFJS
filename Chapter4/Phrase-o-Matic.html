@@ -1,0 +1,26 @@
+<!docytype html;>
+<html lang="en">
+<head>
+	<title>Phrase-o-matic</title>
+	<meta charset="utf-8">
+	<script>
+		function makePhrases(){ //創建一個makePhrases函式
+		 var words1 =["24/7", "multi-tier","30,000 foot","B-to-B","win-win"]; //建立3個陣列
+		 var words2 =["empowered", "value-added","oriented","focused","aligned"];
+		 var words3 =["process", "solution","tripper-point","strategy","vision"];
+
+		 var rand1 = Math.floor(Math.random() * words1.length); //建立三個變數
+		 var rand2 = Math.floor(Math.random() * words1.length); // 使用Math.random函式＊words的長度
+		 var rand3 = Math.floor(Math.random() * words1.length); //使用floor產生0-5隨機數字
+
+		 var phrase = words1[rand1] + " " + words2[rand2] + " " + words3[rand3]; //隨機產生3個words中任一個單字
+		 alert(phrase);
+		}
+		makePhrases();
+	</script>
+</head>
+<body></body>
+</html>
+
+
+		

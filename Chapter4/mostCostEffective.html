@@ -1,0 +1,73 @@
+<!docytype html;>
+<html lang="en">
+<head>
+	<title>FUNCTION GETMOSTCOSTEFFECTIVESOLUTION</title>
+	<meta charset="utf-8">
+	<script> //找出泡泡分數最高且成本最低的溶液
+		var scores = [60,50,60,58,54,54,
+					  58,50,52,54,48,69,
+					  34,55,51,52,44,51,
+					  69,64,66,55,52,61,
+					  46,31,57,52,44,18,
+					  41,53,55,61,51,44]; // 題目中的陣列
+		var costs =  [.25,.27,.25,.25,.25,.25,
+					  .33,.31,.25,.29,.27,.22,
+					  .31,.25,.25,.33,.21,.25,
+					  .25,.25,.28,.25,.24,.22,
+					  .20,.25,.30,.25,.24,.25,
+					  .25,.25,.27,.25,.26,.29]; // 題目中的cost陣列
+
+function printAndGetHighScore(scores){ //建立陣列中回傳分數最高的函數
+	var highScore = 0; // local variables
+		var output;
+	for(var i =0; i < scores.length; i++){
+			output = "Bubble solution #" + i + " score: " + scores[i];
+			console.log(output);
+			if(scores[i] > highScore){
+				highScore = scores[i];
+			}
+		}
+		return highScore;
+}
+	var highScore =printAndGetHighScore(scores);  //陣列最高分數
+
+		console.log("Bubble tests: " + scores.length );
+		console.log("highest Bubble score: " + highScore );
+function getBestResults(scores,highScore){ //陣列中最好的
+		var bestSolutions = []; // 用來放置陣列中最好的
+
+		for(var i =0; i <scores.length; i++){
+			if(scores[i] == highScore){ // 如果scores陣列中元素和最高分相同就放進bestSolutions陣列中
+				bestSolutions.push(i); //放進scores最高分數的編號
+		}
+	}
+	return bestSolutions; 
+}
+	var bestSolutions = getBestResults(scores,highScore);   
+	console.log("solutions with the highest score: " + bestSolutions);
+
+	function getMostCostEffectiveSolution(scores,costs,highScore){  // 尋找cp值
+		var cost = 100;  //先建立成本較高的數字，再從最高分數的溶液取得最低成本
+		var index; //記住成本最低的索引
+		for(var i = 0; i < scores.length; i++){ //
+			if(scores[i] == highScore){ //當然找分數最高的溶液 哪一個成本最低就對了
+				if(cost > costs[i]){ //if the current value of cost is greater than the cost of the bubble solution costs[]
+					index = i;
+					cost = costs[i];
+				}
+			}
+		}
+		return index;
+	}
+	var mostCostEffective = getMostCostEffectiveSolution(scores, costs, highScore);
+	console.log("bubble solution #" + mostCostEffective + " is the most cost effective");
+
+
+
+
+
+
+	</script>
+</head>
+<body></body>
+</html>
