@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Thing-a-majig-</title>
+</head>
+<body>
+</body>
+	<script >
+		
+		
+		function display(output){  //display 函式建立
+		console.log(output);
+		clunkCounter = clunkCounter + 1;
+}
+
+		function clunk(times) {   
+		var num = times; //好的習慣,local variavles 建立在函示開頭處
+		while (num > 0){
+		display("clunk");
+		num = num - 1;
+	}
+}
+	function thingamajig(size) {
+		var facky = 1;  
+		clunkCounter = 0; //未建立var 所以為 global variable
+ 	if ( size == 0){
+		display("clank");
+	} else if (size == 1) {
+		display("thunk");
+	}else {
+		while (size > 1){
+			facky = facky * size;
+			size = size - 1;
+		}
+	}
+	clunk(facky);
+}
+
+var clunkCounter = 0; //clunk計數器
+thingamajig(1);
+console.log(clunkCounter);
+
+var clunkCounter = 0; //clunk計數器
+thingamajig(2);
+console.log(clunkCounter);
+
+var clunkCounter = 0; //clunk計數器
+thingamajig(3);
+console.log(clunkCounter);
+
+
+
+
+		
+	</script>
+</body>
+</html>
