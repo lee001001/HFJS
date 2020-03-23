@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>thisPractice </title> //網頁不知道fiat.start的屬性
+<meta charset="utf-8">
+<script>
+var eightBall = { index: 0,
+	advice:["yes","no","maybe","not a chance"],
+	shake: function(){
+		this.index = this.index + 1;
+		if(this.index >= this.advice.length) {
+			this.index=0;
+		}
+	},
+	look:function(){
+		return this.advice[this.index];
+	}
+};
+eightBall.shake();
+console.log(eightBall.look());
+eightBall.shake();
+console.log(eightBall.look());
+eightBall.shake();
+console.log(eightBall.look());
+eightBall.shake();
+console.log(eightBall.look());
+for(var prop in eightBall){
+	console.log(prop + ":" + eightBall[prop]);
+}
+</script>
+<body>
+</body>
+
+</html>

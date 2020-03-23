@@ -1,0 +1,38 @@
+<!doctype html> //網頁知道fiat.start的屬性
+<html lang="en">
+<head>
+
+<title>fiatStartedFix </title>
+<meta charset="utf-8">
+
+<title>SuperSecret </title>
+</head>
+<script>
+var fiat = { 
+	make: "Fiat",
+	model: "500",
+	year: 1957,
+	color:"Medium blue",
+	passengers: 2,
+	convertible:88000,
+	started: false,
+	start: function(){
+		this.started =true; // 使用this知道started的物件
+	},
+	stop: function(){
+		this.started =false;
+	},
+	drive: function(){
+		if(this.started){
+		alert("Zoom zoom");
+	}else {
+		alert("You need to start the engine first.");
+	}
+ }
+};
+
+</script>
+<body>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+//網頁無法知道fiat.start的屬性
+<!doctype html>
+<html lang="en">
+<head>
+
+<title>fiatStarted </title>
+<meta charset="utf-8">
+<script>
+var fiat = { 
+	make: "Fiat",
+	model: "500",
+	year: 1957,
+	color:"Medium blue",
+	passengers: 2,
+	convertible:88000,
+	started: false,
+	start: function(){
+		started =true;
+	},
+	stop: function(){
+		started =false;
+	},
+	drive: function(){
+		if(started){
+		alert("Zoom zoom");
+	}else {
+		alert("You need to start the engine first.");
+	}
+ }
+};
+
+</script>
+<body>
+</body>
+
+</html>

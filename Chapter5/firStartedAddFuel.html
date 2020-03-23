@@ -1,0 +1,55 @@
+<!doctype html> //添加汽油的屬性
+<html lang="en">
+<head>
+
+<title>fiatStartedFix </title>
+<meta charset="utf-8">
+
+<title>SuperSecret </title>
+</head>
+<script>
+var fiat = { 
+	make: "Fiat",
+	model: "500",
+	year: 1957,
+	color:"Medium blue",
+	passengers: 2,
+	convertible:88000,
+	started: false,
+	fuel :0, //新增汽油屬性
+start: function(){
+		this.started =true; // 使用this知道started的物件
+	},
+stop: function(){
+		this.started =false;
+	},
+drive: function(){
+		if(this.started){
+		alert("Zoom zoom");
+	}else {
+		alert("You need to start the engine first.");
+	}
+ },
+ addFuel: function(amount){
+ 	if(this.started){
+ 		if(this.fuel > 0){
+ 			alert(this.make +  " " + this.model + " goes zoom zoom!");
+ 			this.fuel = this.fuel -1;
+ 		} else {
+ 			alert("Uh oh,out of fuel.");
+ 			this.stop();
+ 		}
+ 	}else{
+ 		alert("You need to start to engine first.");
+ 	}
+ },
+addFuel:function(amount){
+ 	this.fuel = this.fuel + amount; //因為fuel是物件屬性使用this 
+ }
+ 
+ };
+</script>
+<body>
+</body>
+
+</html>
