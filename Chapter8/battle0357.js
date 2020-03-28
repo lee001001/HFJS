@@ -116,26 +116,17 @@ var view = {
 		*/
 		function handleFireButton(){
 			// 從fire按鈕的處理程序取的玩家的輸入,並將它交給控制器處理
-			var guessInput = document.getElementById("guessInput");
-			var guess = guessInput.value;
+			var guessesInput = document.getElementById("guessesInput");
+			var guess = guessesInput.value;
 			controller.processGuess(guess);
 			guessesInput ="";		}
 		function init(){
 			var fireButton = document.getElementById("fireButton");
 			fireButton.onclick = handleFireButton;
 
-			var guessInput =document.getElementById("guessInput");
-			guessInput.onkeypress = handleKeyPress; //onkeypress處理欄位的按鍵事件
-		}
-		function handleKeyPress(e){
-			var fireButton = document.getElementById("fireButton");
-			if(e.keyCode ===13){ //按下return鍵則會被設定成13
-				fireButton.click();
-				return false;
-			}
+				
 		}
 		window.onload = init;
-
 
 
 

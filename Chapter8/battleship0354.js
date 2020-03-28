@@ -52,7 +52,7 @@ var view = {
 				return false; //沒打中回報false
 		},
 		isSunk:function(ship){
-			for(var i = 0; i <this.shipLength;i++){
+			for(var i = 0; i <this.length;i++){
 				if(ship.hits[i] !== "hit"){
 					return false; //其中一個不是hit 代表船沒有沉
 				}
@@ -60,34 +60,25 @@ var view = {
 			return true; //船沉表示true
 		}
 	};
-	//控制器的物件
+	// 控制器的物件
 	var controller = {
 		guesses: 0 ,
-
 		processGuess: function(guess){
-			var location = parseGuess(guess);
-			if (location){ // 計算你猜了幾次
-				this.guesses++;
-				var hit = model.fire(location); //開火
-				//如果猜測命中了船艦且擊沈的數目等於遊戲中的總數量，則顯示玩家所有船艦沈沒
-				if(hit && model.shipsSunk === model.numShips) {
-					view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses ");
-				}
-
+			if(guess === null || guess.length !==2){
+				alert("Oops,please enter a letter and a number on the board.");
 			}
-		}
-	};
 
-	// parseGuess函數
+		}
+	}
+
 	function parseGuess(guess){
 		var alphabet = ["A" ,"B" ,"C" , "D" , "E", "F", "G"];
 		if(guess === null || guess.length !==2){
-		   alert("Oops,please enter a letter and a number on the board.");
-		} else {
+				alert("Oops,please enter a letter and a number on the board.");
+		} else{
 			firstChar = guess.charAt(0); //玩家第一個為字母
 			var row = alphabet.indexOf(firstChar);
 			var column = guess.charAt(1); //得到玩家輸入第二個數字
-
 			if(isNaN(row) || isNaN(column)){
 				alert("Oops,that isn't on the board.");
 			}else if (row < 0 || row >= model.boardSize || column < 0 || column >= model.boardSize){
@@ -99,46 +90,9 @@ var view = {
 		}
 		return null;
 	}
-	/*
-		controller.processGuess("A0");
-
-		controller.processGuess("A6");
-		controller.processGuess("B6");
-		controller.processGuess("C6");
-
-		controller.processGuess("C4");
-		controller.processGuess("D4");
-		controller.processGuess("E4");
-
-		controller.processGuess("B0");
-		controller.processGuess("B1");
-		controller.processGuess("B2");
-		*/
-		function handleFireButton(){
-			// 從fire按鈕的處理程序取的玩家的輸入,並將它交給控制器處理
-			var guessInput = document.getElementById("guessInput");
-			var guess = guessInput.value;
-			controller.processGuess(guess);
-			guessesInput ="";		}
-		function init(){
-			var fireButton = document.getElementById("fireButton");
-			fireButton.onclick = handleFireButton;
-
-			var guessInput =document.getElementById("guessInput");
-			guessInput.onkeypress = handleKeyPress; //onkeypress處理欄位的按鍵事件
-		}
-		function handleKeyPress(e){
-			var fireButton = document.getElementById("fireButton");
-			if(e.keyCode ===13){ //按下return鍵則會被設定成13
-				fireButton.click();
-				return false;
-			}
-		}
-		window.onload = init;
-
-
-
-
-
-
-
+	console.log(parseGuess("A0"));
+	console.log(parseGuess("B6"));
+	console.log(parseGuess("G3"));
+	console.log(parseGuess("H0"));
+	console.log(parseGuess("A7"));
+	
