@@ -1,0 +1,46 @@
+<!--滑鼠移到過圖片就變清楚的功能和滑鼠移出圖片就變模糊的功能-->
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Image Guess</title>
+	<style> body{ margin: 20px; }
+			img {margin: 20px;} <!--圖像之間加入px的邊界，2-2可以用-->
+
+</style>
+	<script>  
+		window.onload = function() { 							<!--讓showAnswer.onclick處理頁面所有圖片-->
+			var images = document.getElementsByTagName("img");  <!--取得頁面上所有img-->
+			for(var i = 0; i < images.length;i++ ) {
+				images[i].onmouseover = showAnswer; 			<!--滑鼠接近-->
+				images[i].onmouseout = reblur;					<!--滑鼠移走-->
+			}
+		};
+		
+
+		function showAnswer(eventObj){		<!--讓showAnswer.處理頁面所有圖片,每當有圖片點擊時，就會傳入一個事物物件-->
+			var image = eventObj.target; 	<!--eventObj.target指向點擊的圖片-->
+			var name = image.id;			<!--取得圖片的id-->
+			name = name +".jpg";			<!--name為圖片的id-->
+			image.src = name;
+
+			//setTimeout(reblur, 1000,image); 計時器功能很接近題目
+			
+		}
+		function reblur(eventObj){ //圖片載入模糊檔案
+			var image = eventObj.target;//
+			var name = image.id;
+			name = name+"blur.jpg";
+			image.src = name;
+		}
+	</script>
+</head>
+<body>
+	<img id ="zero" src="zeroblur.jpg">
+	<img id ="one" src="oneblur.jpg">
+	<img id ="two" src="twoblur.jpg">
+	<img id ="three" src="threeblur.jpg">
+	<img id ="four" src="fourblur.jpg">
+	<img id ="five" src="fiveblur.jpg">
+</body>
+</html>

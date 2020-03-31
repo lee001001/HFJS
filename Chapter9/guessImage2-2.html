@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Image Guess2-2</title>
+	<style> body{ margin: 20px; }
+			img {margin: 20px;} <!--圖像之間加入px的邊界，2-2可以用-->
+
+</style>
+	<script>
+		window.onload = init;
+		function init(){ //古法煉鋼
+			var image0 = document.getElementById("zero");
+			image0.onclick=showImageZero;
+
+			var image1 = document.getElementById("one");
+			image1.onclick=showImageOne;
+
+			var image2 = document.getElementById("two");
+			image2.onclick=showImageTwo;
+
+			var image3 = document.getElementById("three");
+			image3.onclick=showImageThree;
+
+			var image4 = document.getElementById("four");
+			image4.onclick=showImageFour;
+
+			var image5 = document.getElementById("five");
+			image5.onclick=showImageFive;
+		};
+
+		function showImageZero(){ //使用笨方法
+			var image = document.getElementById("zero");
+			image.src="zero.jpg";
+		}
+		function showImageOne(){ //使用笨方法
+			var image = document.getElementById("one");
+			image.src="one.jpg";
+		}
+		function showImageTwo(){ //使用笨方法
+			var image = document.getElementById("two");
+			image.src="two.jpg";
+		}
+		function showImageThree(){ //使用笨方法
+			var image = document.getElementById("three");
+			image.src="three.jpg";
+		}
+		function showImageFour(){ //使用笨方法
+			var image = document.getElementById("four");
+			image.src="four.jpg";
+		}
+		function showImageFive(){ //使用笨方法
+			var image = document.getElementById("five");
+			image.src="five.jpg";
+		}
+
+
+
+	</script>
+</head>
+<body>
+	<img id ="zero" src="zeroblur.jpg">
+	<img id ="one" src="oneblur.jpg">
+	<img id ="two" src="twoblur.jpg">
+	<img id ="three" src="threeblur.jpg">
+	<img id ="four" src="fourblur.jpg">
+	<img id ="five" src="fiveblur.jpg">
+</body>
+</html>
