@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>function expression vs function declaration</title>
+	<script>
+		var migrating = true;
+
+		var fly = function(num){    <!--函式運算式 function expression-->
+			for(var i = 0; i < num; i++){
+				console.log("Flying!");
+			}
+		};
+		function quack(num){		<!-- 函式宣告 function declaration -->
+			for(var i = 0; i < num; i++){
+				console.log("Quack!");
+			}
+		}
+		if(migrating){
+			quack(4);
+			fly(4);
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

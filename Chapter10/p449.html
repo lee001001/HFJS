@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Document</title>
+			<script>
+				function fun(echo){
+					console.log(echo);
+				};
+				fun("hello");
+
+				function boo(aFunction){
+					aFunction("boo");
+				}
+
+				boo(fun); <!-- fun等於aFunction -->
+				console.log(fun); <!--fun一個函式庫-->
+				fun(boo); <!-- boo 保留一個函式庫 -->
+
+				var moreFun = fun;
+
+				moreFun("hello again"); <!-- moreFun等於fun的函數庫-->
+
+				function echoMaker(){
+					return fun;
+				}
+				var bigFun = echoMaker();
+				bigFun("Is there an echo");
+			</script>
+		</head>
+		<body>
+			
+		</body>
+		</html>		

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>CreateDrink10-3	</title>
+		<script>
+			var passengers = [{ name:"Jane Doloop", paid:true, ticket:"coach"},
+							  { name:"Dr.Evel", paid:true, ticket:"firstclass"},
+							  { name:"Sue Property", paid:false, ticket:"firstclass"},
+							  { name:"John Funcill", paid:true, ticket:"permium"}
+
+			];
+			<!--建立晚餐的function,且將會回傳一個函示，此函式知道如何讓乘客點飲料-->
+			function createDrinkOrder(passenger){
+				var orderFunction;
+				if(passenger.ticker === "firstclass"){
+					orderFunction =function(){
+					alert("Would you like a cocktail or winne?");
+				};
+				}else{
+					orderFunction = function(){
+					alert("Your choice is cola or water");
+				};
+				}
+				return orderFunction; <!--回傳函示-->
+			}
+			function createDinnerOrder(passenger){
+				var dinnerOrder;
+				if(passenger.ticker === "firstclass"){
+					dinnerOrder = function(){
+					alert("Would you like a chicken or pasta");
+					};
+				}else if(passenger.ticket === "premium"){
+					dinnerOrder = function(){
+					alert("Would you like a snack box or cheese plate");
+					};
+				}else{
+					dinnerOrder = function(){
+					alert("Would you like a peanuts or pretzels");
+				};
+				}
+
+				return dinnerOrder;
+			}
+			function serveCustomer(passenger){
+				var getDrinkOrderFunction = createDrinkOrder(passenger);
+				var getDinnerOrerFunction = createDinnerOrder(passenger);
+				getDrinkOrderFunction();
+				<!--讓乘客點晚餐-->
+				getDrinkOrderFunction();
+				getDinnerOrerFunction();
+				getDrinkOrderFunction();
+				<!--播放電影-->
+				getDrinkOrderFunction();
+				<!--收拾垃圾-->
+			}
+			
+			<!-- 最後-->
+			function servePassengers(passengers){
+				for(var i = 0; i < passengers.length;i++){
+					serveCustomer(passengers[i]);
+				}
+
+			}
+			servePassengers(passengers);
+
+		</script>
+	</head>
+	<body>
+		
+	</body>
+	</html>	

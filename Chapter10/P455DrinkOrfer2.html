@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>CreateDrink10-2	</title>
+		<script>
+			var passengers = [{ name:"Jane Doloop", paid:true, ticket:"coach"},
+							  { name:"Dr.Evel", paid:true, ticket:"firstclass"},
+							  { name:"Sue Property", paid:false, ticket:"firstclass"},
+							  { name:"John Funcill", paid:true, ticket:"coach"}
+
+			];
+			<!--建立晚餐的function,且將會回傳一個函示，此函式知道如何讓乘客點飲料-->
+			function createDrinkOrder(passenger){
+				var orderFunction;
+				if(passenger.ticker === "firstclass"){
+					orderFunction =function(){
+					alert("Would you likea a cocktail or winne?");
+				};
+				}else{
+					orderFunction = function(){
+					alert("Your choice is cola or water");
+				};
+				}
+				return orderFunction; <!--回傳函示-->
+			}
+			function serveCustomer(passenger){
+				var getDrinkOrderFunction = createDrinkOrder(passenger);
+				getDrinkOrderFunction();
+				<!--讓乘客點晚餐-->
+				getDrinkOrderFunction();
+				getDrinkOrderFunction();
+				<!--播放電影-->
+				getDrinkOrderFunction();
+				<!--收拾垃圾-->
+
+			}
+			<!-- 最後-->
+			function servePassengers(passengers){
+				for(var i = 0; i < passengers.length;i++){
+					serveCustomer(passengers[i]);
+				}
+
+			}
+			servePassengers(passengers);
+
+		</script>
+	</head>
+	<body>
+		
+	</body>
+	</html>	

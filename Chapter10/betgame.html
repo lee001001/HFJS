@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bet Game</title>
+	<script>
+		var winner = function(){  alert("WINNER") };	<!--wineer變數保存"wineer"的reference-->
+		var loser =  function(){  alert("LOUSER!") };	<!--loser變數保存"loser"的reference-->
+
+		winner();
+
+		var a = winner;
+		var b = loser;
+		var c = loser;
+		a();
+		b();
+		c = a; <!-- W-->
+		a = b; <!-- L-->
+		b = c; <!-- W-->
+		c = a; <!-- l-->
+		a = c; <!-- W-->
+		a = b; <!-- W-->
+		b = c; <!-- L-->
+		a(); <!-- line21-->
+			
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

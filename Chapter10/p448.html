@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>P448</title>
+	<script>
+		function printPassenger(passenger){
+			// 列印乘客的名字和以及他們是否有付錢列印
+			var message = passenger.name;
+			if(passenger.paid ===true){
+				message = message +" has paid";
+			}else{
+				message = message +" has not paid";
+			}
+			console.log(message);
+			return false;
+		}
+		processPassenger(passengers, printPassenger);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
