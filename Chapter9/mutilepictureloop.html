@@ -8,7 +8,8 @@
 
 </style>
 	<script>  
-		window.onload = function(){<!--讓showAnswer.onclick處理頁面所有圖片-->
+		window.onload = init;
+		function init() { <!--讓showAnswer.onclick處理頁面所有圖片-->
 			var images = document.getElementsByTagName("img");  <!--取得頁面上所有img-->
 			for(var i = 0; i < images.length;i++ ) {
 				images[i].onclick = showAnswer;
@@ -25,7 +26,7 @@
 			setTimeout(reblur, 2000,image);
 			
 		}
-		function reblur(image){ //兩秒再被模糊
+		function reblur(image){ //兩秒再
 			var name = image.id;
 			name = name+"blur.jpg";
 			image.src = name;
