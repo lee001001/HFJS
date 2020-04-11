@@ -4,17 +4,24 @@
 	<meta charset="UTF-8">
 	<title>constructor</title>
 	<script >
-		function Dog(name,breed, weight){
+		function Dog(name,breed, weight){   <!--constructor經常使用大寫 -->
 			this.name = name;
 			this.breed = breed;
 			this.weight = weight;
+			this.bark = function(){
+				if (this.weight > 25){
+					alert(this.name + " say Woof!");
+				} else {
+					alert(this.name + " say Yip!");
+				}
+			};
 		}
 		var fido = new Dog("fido", "Mixed",38);
 		var fluffy = new Dog("fluffy", "poddle",38);
 		var spot = new Dog("Spot", "Chihuahua",10);
 		var dogs = [fido,fluffy, spot];
 
-		for(var i =0; i < dogs.length;i++){
+		for (var i =0; i < dogs.length;i++){
 			var size = "small";
 			if (dogs[i].weight > 10){
 				size ="large";
@@ -22,7 +29,11 @@
 			console.log("Dog " + dogs[i].name + " is a " + size +" "+ dogs[i].breed);
 		}
 
+		for (var i = 0; i < dogs.length; i++) { <!--增加視窗訊息-->
+			dogs[i].bark();
+		}
 	</script>
+}
 </head>
 <body>
 	
